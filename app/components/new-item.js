@@ -5,9 +5,16 @@ export default Ember.Component.extend({
   actions: {
     addNewItemAction(){
       this.set('addNewItemBool',true);
-   },
-   save(){
+    },
+    saveItem(){
+     var params = {
+       name: this.get("name"),
+       description: this.get("description"),
+       cost: this.get("cost"),
+       image: this.get("image")
+     };
      this.set('addNewItemBool',false);
-   }
+     this.sendAction("saveItem", params);
+    }
   }
 });
