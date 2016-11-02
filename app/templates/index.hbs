@@ -1,0 +1,16 @@
+<h1>welcome to the shopping page!</h1>
+
+<ul>
+  {{#each model as |item|}}
+     <li>item: {{item.name}} <br> ${{item.cost}} <br> -{{item.description}} <br> <img src="{{item.image}}" alt="{{item.name}}" /> </li>
+     <hr>
+  {{/each}}
+</ul>
+
+<p>
+  this will be a button to add items
+</p>
+
+<p>
+  this will be a delete button
+</p>
