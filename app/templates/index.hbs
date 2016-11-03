@@ -1,17 +1,20 @@
 <h1>welcome to the shopping page!</h1>
 
+<p>
+  {{new-item saveItem="saveItem" item=model}}
+</p>
+<br>
 <ul>
   {{#each model as |item|}}
-     <li>item: {{item.name}} <br> ${{item.cost}} <br> -{{item.description}} <br> <img src="{{item.image}}" alt="{{item.name}}" /> </li>
+     <li>item: {{item.name}} <br> ${{item.cost}} <br> -{{item.description}}<br>
+       {{delete-item item=item destroyItem="destroyItem"}}
+       <br> <img src="{{item.image}}" alt="{{item.name}}" /> </li>
      <hr>
   {{/each}}
 </ul>
 
-<p>
-  {{new-item saveItem="saveItem" item=model}}
-  this will be a button to add items
-</p>
 
-<p>
-  this will be a delete button
-</p>
+<!-- <p>
+  delete-item
+  {{delete-item deleteItem="deleteItem"}}
+</p> -->
