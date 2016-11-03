@@ -1,13 +1,14 @@
 <h1>welcome to the shopping page!</h1>
 
 <p>
-  {{new-item saveItem="saveItem" item=model}}
+  {{new-item saveItem="saveItem"  item=model}}
 </p>
 <br>
 <ul>
   {{#each model as |item|}}
      <li>item: {{item.name}} <br> ${{item.cost}} <br> -{{item.description}}<br>
        {{delete-item item=item destroyItem="destroyItem"}}
+       {{update-item item=item update="update"}}
        <br> <img src="{{item.image}}" alt="{{item.name}}" /> </li>
      <hr>
   {{/each}}
