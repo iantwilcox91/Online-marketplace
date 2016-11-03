@@ -9,11 +9,14 @@
      <li>item: {{item.name}} <br> ${{item.cost}} <br> -{{item.description}}<br>
        {{delete-item item=item destroyItem="destroyItem"}}
        {{update-item item=item update="update"}}
-       <br> <img src="{{item.image}}" alt="{{item.name}}" /> </li>
+       <br> <img src="{{item.image}}" alt="{{item.name}}" />
+       <button {{action 'addToCart' item}}>Add to Cart</button>
+       </li>
      <hr>
   {{/each}}
 </ul>
-
+<p>this is what you clicked:</p>
+{{display-cart}}
 
 <!-- <p>
   delete-item
